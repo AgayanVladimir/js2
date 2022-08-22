@@ -1,4 +1,4 @@
-// Задание 1
+/*// Задание 1
 // Перепишите код с использованием тернарного оператора
 
 // let male = true;
@@ -36,11 +36,11 @@ for (let i = 0; i <= 9; i += 2) {
 // Задание 4
 // Вывести в консоль квадраты чисел от 0 до 100 (не включая 100) - т.е. вывести числа 0, 1, 4, 9, 16...
 // * Задавать количество чисел, которые нужно вывести, при помощи функции prompt.
-let Numbers = Number(prompt('Задайте количество чисел (до 99), которые нужно вывести: '));
-if (Numbers > 99) {
+let countNum = Number(prompt('Задайте количество чисел (до 99), которые нужно вывести: '));
+if (countNum > 99) {
 	alert('Число больше 100')
 } else {
-	for (let i = 0; i < Numbers; i++) {
+	for (let i = 0; i < countNum; i++) {
 		console.log(i ** 2);
 	}
 }
@@ -71,20 +71,21 @@ while (b < 3) {
 	alert(`number ${b}!`)
 	b++
 }
-
+*/
 // Задание 7
 // Переписать задание 4 в виде функции. Т.е. описать функцию, которая выводит квадраты чисел из заданного диапазона (диапазон будет попадать в функцию как аргументы).
-function getNum(Numbers) {
+function getNum(minNum, maxNum) {
 
-	if (Numbers > 99) {
-		alert('Число больше 100')
-	} else {
-		for (let i = 0; i < Numbers; i++) {
+	if (minNum >= 0 && maxNum <= 99) {
+		for (let i = minNum; i < maxNum && minNum <= i; i++) {
 			console.log(i ** 2);
 		}
-	}
+	} else { console.log('Неверное значение') };
+
 }
-getNum(100);
+
+getNum(5, 7);
+
 
 
 // Задание 8
@@ -102,7 +103,7 @@ function getRandomInteger(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 function getRandomColor() {
-	return console.log('rgb(' + getRandomInteger(0, 255) + ',' + getRandomInteger(0, 255) + ',' + getRandomInteger(0, 255) + ')');
+	console.log('rgb(' + getRandomInteger(0, 255) + ',' + getRandomInteger(0, 255) + ',' + getRandomInteger(0, 255) + ')');
 }
 getRandomColor();
 
